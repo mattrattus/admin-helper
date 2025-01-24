@@ -1,21 +1,27 @@
 #!/usr/bin/env bash
 
 #admin-helper
-#v2.0.1
+#v2.0.2
 #by mattrattus
 #https://mattrattus.github.io
 
+GREEN='\033[1;32m'
+BLUE='\033[1;34m'
+YELLOW='\033[1;33m'
+RED='\033[1;31m'
+RESET='\033[0m'
+
 echo
-echo "Hi $USER!"
+echo -e "${GREEN}Hi $USER!${RESET}"
 echo
-echo "Today is: $(date)"
+echo -e "${YELLOW}Today is: $(date)${RESET}"
 echo
 
 show_menu() {
-    echo -e "\033[32m===== ADMIN HELPER MENU =====\033[0m"
-    echo "1. Server status"
-    echo "2. Exit"
-    echo -e "\033[32m=============================\033[0m"
+    echo -e "${GREEN}===== ADMIN HELPER MENU =====${RESET}"
+    echo -e "${BLUE}1. Server status${RESET}"
+    echo -e "${BLUE}2. Exit${RESET}"
+    echo -e "${GREEN}=============================${RESET}"
 }
 
 while true; do
@@ -23,7 +29,7 @@ while true; do
     read -p "Choose the option: " choice
 
     if ! [[ $choice =~ ^[0-9]+$ ]]; then
-        echo "Please enter a valid number."
+        echo -e "${RED}Please enter a valid number.${RESET}"
         continue
     fi
 
@@ -33,12 +39,12 @@ while true; do
             ;;
         2)
             echo
-            echo "Have a nice day $USER!"
+            echo -e "${GREEN}Have a nice day $USER!${RESET}"
             echo
             exit 0
             ;;
         *)
-            echo "Incorrect selection. Try again."
+            echo -e "${RED}Incorrect selection. Try again.${RESET}"
             ;;
     esac
 done
