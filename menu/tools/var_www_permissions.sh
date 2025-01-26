@@ -11,6 +11,7 @@ RESET='\033[0m'
 check_directory() {
     if [ ! -d "/var/www/$1" ]; then
         echo -e "${RED}Error: Directory /var/www/$1 does not exist.${RESET}"
+        echo
         return 1
     fi
     return 0
