@@ -33,8 +33,3 @@ sudo fail2ban-client status sshd
 echo
 read -p "Press enter to continue"
 echo
-echo -e "${BLUE}Update:${RESET}"
-sudo apt update
-echo
-read -p "Press enter to continue"
-echo

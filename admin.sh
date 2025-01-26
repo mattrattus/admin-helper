@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #admin-helper
-#v2.1.0
+#v2.1.1
 #by mattrattus
 #https://mattrattus.github.io
 
@@ -19,9 +19,10 @@ echo
 
 show_menu() {
     echo -e "${GREEN}===== ADMIN HELPER MENU =====${RESET}"
+    echo -e "${BLUE}0. System update${RESET}"
     echo -e "${BLUE}1. Server status${RESET}"
     echo -e "${BLUE}2. Tool_1 - var_www_permissions${RESET}"
-    echo -e "${BLUE}2. Exit${RESET}"
+    echo -e "${BLUE}3. Exit${RESET}"
     echo -e "${GREEN}=============================${RESET}"
 }
 
@@ -35,6 +36,9 @@ while true; do
     fi
 
     case $choice in
+        0)
+            sudo apt update && sudo apt -y upgrade
+            ;;
         1)
             ./menu/server_status.sh
             ;;
