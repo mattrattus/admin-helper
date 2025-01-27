@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #admin-helper
-#v2.1.1
+#v2.2.0
 #by mattrattus
 #https://mattrattus.github.io
 
@@ -21,8 +21,9 @@ show_menu() {
     echo -e "${GREEN}===== ADMIN HELPER MENU =====${RESET}"
     echo -e "${BLUE}0. System update${RESET}"
     echo -e "${BLUE}1. Server status${RESET}"
-    echo -e "${BLUE}2. Tool_1 - var_www_permissions${RESET}"
-    echo -e "${BLUE}3. Exit${RESET}"
+    echo -e "${BLUE}2. Tool_1 - apache2_virtualhost${RESET}"
+    echo -e "${BLUE}3. Tool_2 - var_www_permissions${RESET}"
+    echo -e "${BLUE}4. Exit${RESET}"
     echo -e "${GREEN}=============================${RESET}"
 }
 
@@ -43,9 +44,12 @@ while true; do
             ./menu/server_status.sh
             ;;
         2)
-            ./menu/tools/var_www_permissions.sh
+            ./menu/tools/apache2_virtualhost.sh
             ;;
         3)
+            ./menu/tools/var_www_permissions.sh
+            ;;
+        4)
             echo
             echo -e "${GREEN}Have a nice day $USER!${RESET}"
             echo
